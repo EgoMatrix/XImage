@@ -1,0 +1,110 @@
+name: 🐞 Bug 反馈
+description: 软件功能异常、崩溃、报错、UI 错乱等问题
+labels: ["bug", "needs-triage"]
+title: "[BUG] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！请尽量按下面的模板补充信息，能让定位与修复速度提升一个数量级。
+
+        > ⚠️ 在提交前，请先确认是否已在 [FAQ](https://github.com/EgoMatrix/XImage/blob/main/docs/faq.md) 与已有 Issue 中搜索过。
+
+  - type: input
+    id: version
+    attributes:
+      label: XImage 版本
+      description: 在「左下角作者头像 → 关于」可以看到，例如 v1.0.0
+      placeholder: v1.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统
+      multiple: false
+      options:
+        - macOS (Apple Silicon)
+        - macOS (Intel)
+        - Windows 10
+        - Windows 11
+        - Linux (Ubuntu/Debian)
+        - Linux (Fedora/CentOS)
+        - Linux (Arch)
+        - 其它
+    validations:
+      required: true
+
+  - type: input
+    id: os-version
+    attributes:
+      label: 系统版本
+      description: 例如 macOS 14.4、Windows 11 23H2、Ubuntu 22.04
+      placeholder: 例如 macOS 14.4
+    validations:
+      required: false
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: 复现步骤
+      description: 越具体越好，5 步以内即可定位的最理想
+      placeholder: |
+        1. 打开 XImage
+        2. 进入「渠道设置」
+        3. 点击「新增渠道」
+        4. 填入...
+        5. 看到错误...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为
+      placeholder: 应该看到生成的图片正常显示。
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为
+      placeholder: 预览框一直显示"生成中"，超过 2 分钟也没结果。
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 调用日志 / 错误截图
+      description: |
+        在「**设置 → 调用日志**」里能看到详细错误信息。
+        如果是 UI 问题，附张截图。**截图请打码 API Key 与本地路径。**
+      render: text
+
+  - type: dropdown
+    id: model
+    attributes:
+      label: 触发问题的渠道类型
+      multiple: false
+      options:
+        - OpenAI 官方
+        - 中转 API
+        - 自定义 Base URL
+        - 与渠道无关 / 不确定
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: 确认
+      options:
+        - label: 我已搜索过历史 Issue，确认没有重复
+          required: true
+        - label: 我已查看 FAQ 与使用手册，未找到答案
+          required: true
+        - label: 截图与日志中没有泄露我的 API Key、Token 或敏感路径
+          required: true

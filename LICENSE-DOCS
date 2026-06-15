@@ -1,0 +1,115 @@
+XImage 文档与软件授权说明
+================================
+
+本文件覆盖「公开仓库 EgoMatrix/XImage」中的所有内容。
+This file applies to all materials published under the public repository
+EgoMatrix/XImage.
+
+
+────────────────────────────────────────────────────────────────────────
+1. 文档授权 / Documentation License
+────────────────────────────────────────────────────────────────────────
+
+本仓库内的全部文档、文字、截图、示意图、图标，除非另有特别声明，
+均依照 Creative Commons Attribution 4.0 International License
+（CC-BY-4.0）授权。
+
+All written content, screenshots, illustrations and icons in this
+repository, unless otherwise stated, are licensed under the
+Creative Commons Attribution 4.0 International License (CC-BY-4.0).
+
+完整授权条款 / Full license text:
+  https://creativecommons.org/licenses/by/4.0/legalcode
+
+简要说明 / Plain English Summary:
+  - 你可以自由复制、转载、改编、用于商业用途；
+  - 唯一要求：在显著位置注明原作者并附原始链接，例如：
+      “Adapted from XImage user guide,
+       https://github.com/EgoMatrix/XImage, CC-BY-4.0”
+
+  - You are free to copy, redistribute, remix, and adapt — even for
+    commercial purposes;
+  - The only condition: provide appropriate attribution back to
+    XImage and a link to this repository.
+
+
+────────────────────────────────────────────────────────────────────────
+2. 软件本身的授权 / Software License
+────────────────────────────────────────────────────────────────────────
+
+XImage 应用程序（含本仓库 Releases 页提供的安装包：dmg / exe /
+AppImage 等二进制产物）**不包含源代码**，且**不以开源许可证发布**。
+
+The XImage application itself (the binary installers published on
+the Releases page of this repository: dmg / exe / AppImage, etc.)
+is **closed-source** and **not** released under any open-source license.
+
+允许 / Permitted:
+  ✓ 个人与团队免费下载、安装、运行；
+  ✓ 在商业环境中作为内部生产力工具使用；
+  ✓ 出于评测、教学、演示目的进行截图与录屏。
+
+  ✓ Free download, install and run for individuals and teams;
+  ✓ Internal use within commercial organisations;
+  ✓ Screenshots and screen recordings for review, teaching and demos.
+
+不允许 / Not Permitted:
+  ✗ 二次分发、镜像、托管安装包；
+  ✗ 反编译、反汇编、逆向工程；
+  ✗ 删除或修改版权与作者署名；
+  ✗ 把 XImage 整体或主要部分嵌入到其它产品中再分发；
+  ✗ 在任何商业渠道（应用市场、付费下载站、订阅服务）中转售。
+
+  ✗ Redistribution, mirroring, or rehosting of installers;
+  ✗ Decompilation, disassembly, or reverse engineering;
+  ✗ Removal or modification of copyright and authorship notices;
+  ✗ Bundling XImage (in whole or substantial part) into other
+    products for redistribution;
+  ✗ Resale through any commercial channel (app stores, paid
+    download sites, subscription services).
+
+如需例外授权（OEM、二次集成、定制版本），请通过仓库 Issues 联系作者。
+For exceptions (OEM, integration, customised builds), please open
+an Issue to contact the author.
+
+
+────────────────────────────────────────────────────────────────────────
+3. 免责声明 / Disclaimer
+────────────────────────────────────────────────────────────────────────
+
+XImage 是一个调用第三方图片生成模型的客户端。
+
+- 由第三方模型生成的内容版权与合规责任由用户承担；
+- 作者不对生成结果的可用性、准确性、合法性作出任何保证；
+- 软件按“现状”提供，作者不承担因使用本软件造成的任何直接、间接、
+  附带或后果性损失。
+
+XImage is a client that invokes third-party image generation models.
+
+- Copyright and compliance of generated content are the
+  responsibility of the user;
+- The author makes no warranty regarding the usability, accuracy or
+  legality of the generated outputs;
+- The software is provided “AS IS”, without warranty of any kind.
+  In no event shall the author be liable for any direct, indirect,
+  incidental, or consequential damages arising from the use of this
+  software.
+
+
+────────────────────────────────────────────────────────────────────────
+4. 第三方组件 / Third-Party Components
+────────────────────────────────────────────────────────────────────────
+
+XImage 在应用内嵌的第三方开源组件按其原始许可证使用，相关声明随
+应用一同分发（应用内「关于」页可查看完整清单）。
+
+Third-party open-source components embedded inside the XImage
+application remain under their original licenses; the full list of
+acknowledgements is bundled with the application itself
+(see the “About” page inside the app).
+
+
+────────────────────────────────────────────────────────────────────────
+
+Copyright © 2026 XImage Authors. All rights reserved (software).
+Documentation licensed under CC-BY-4.0.

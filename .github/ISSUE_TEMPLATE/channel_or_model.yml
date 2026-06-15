@@ -1,0 +1,77 @@
+name: 🔌 渠道与模型支持
+description: 报告某个渠道 / 模型用不了、请求支持新模型 ID
+labels: ["channel-model", "needs-triage"]
+title: "[CHANNEL] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        渠道 / 模型相关问题独立成类，便于作者跟踪适配状态。
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型
+      options:
+        - 现有渠道无法连接
+        - 现有模型无法生成 / 报错
+        - 请求支持新的渠道
+        - 请求支持新的模型 ID
+        - 模型能力识别错误（应该支持图生图但被识别为不支持）
+    validations:
+      required: true
+
+  - type: input
+    id: provider
+    attributes:
+      label: 渠道 / 服务商
+      description: 例如 OpenAI、Google AI Studio、某中转商名字、字节火山引擎、MiniMax 等
+      placeholder: OpenAI
+    validations:
+      required: true
+
+  - type: input
+    id: model-id
+    attributes:
+      label: 模型 ID
+      description: 例如 gpt-image-1、imagen-3.0-generate-001
+      placeholder: gpt-image-1
+    validations:
+      required: false
+
+  - type: input
+    id: docs
+    attributes:
+      label: 该模型 / 渠道的官方文档链接
+      placeholder: https://...
+    validations:
+      required: false
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: 具体描述
+      description: 操作步骤、错误信息、调用日志片段（**请打码 API Key**）
+      render: text
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: XImage 版本
+      placeholder: v1.0.0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: 确认
+      options:
+        - label: 我已确认 API Key 有效、余额充足
+          required: true
+        - label: 我已查阅 FAQ 与渠道方文档
+          required: true
+        - label: 截图与日志中没有泄露 API Key
+          required: true
