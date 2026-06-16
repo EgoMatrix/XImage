@@ -22,6 +22,61 @@
 
 ---
 
+## [0.0.8] - 2026-06-16
+
+围绕发布同步链路的小幅强化，让公开仓的源码层（main 分支）也能始终拿到与最新 Release 一致的 `docs/changelog.md`，便于用户在仓库主页直接查看历史变更。
+
+### 新增
+
+- **changelog 文件级同步**：`release-sync` workflow 在创建公开仓 Release 之前，新增「Sync Changelog File to Public Repo Codebase」步骤——浅克隆公开仓 main 分支，将私有仓最新的 `docs/changelog.md` 覆盖过去并提交，commit message 自动带上当前 tag。无变更时自动跳过，不会产生空提交。
+
+### 优化
+
+- 公开仓 Release 创建时显式指定 `--target main`，避免在初始仓库（尚未有用户态代码）状态下创建 Release 时出现挂载异常。
+
+---
+
+## [0.0.7] - 2026-06-16
+
+本版聚焦**发布工程**与**创作体验**两条线：补齐了公开仓所需的全部用户文档、把私有仓制品自动同步到公开仓的链路打通；同时新增「创意概念」创作模式，并细致打磨了多个字段与首页布局。
+
+### 新增
+
+#### 创作工作台
+- **新增「创意概念」创作模式**：覆盖 mini-me / 巨人国 / 真人 + 卡通混搭 / 双重曝光 / 漂浮失重 / 被卷入海报或屏幕 / 电影分镜动作 / 超现实物理等 12+ 概念，专为戏剧感画面与广告大片打造。
+- **创作分类切换改为胶囊式 tab**：一行展示 9 个模式，整体更干净，避免在窄屏下换行错位。
+
+#### 公开仓发布体系
+- 新增 `README-public.md`：用户视角的公开仓首页，含三平台下载入口、九大模式速览、隐私说明。
+- 新增 `LICENSE-DOCS`：文档采用 CC-BY-4.0、软件保留所有权利的双授权声明。
+- 新增 `docs/user-guide.md`：完整用户手册（11 节），含「渠道与三类模型（必读）」入门章节、5 分钟跑通指引、九大模式逐一讲解、AI 策划与参考图用法、FAQ 速查。
+- 新增 `docs/faq.md`：覆盖安装、渠道、模型、参考图、隐私、bug 反馈等高频问题。
+- 新增 `.github/ISSUE_TEMPLATE/`：bug 报告 / 功能建议 / 渠道与模型支持三套 issue 表单。
+
+#### 发布同步链路
+- 新增 `.github/workflows/release-sync.yml`：监听构建 workflow 完成后自动接力，把私有仓 Release 中的安装包按白名单同步到公开仓 `EgoMatrix/XImage` 的同名 Release。
+- 同步流程内置 `checksums.txt` 自动校验、SHA256 摘要审计、Release Notes 自动从 changelog 抽取。
+- 提供本地兜底脚本 `scripts/release-sync.sh` 与 `scripts/sync-public-docs.sh`，配合 `extract-changelog.py` 让 docs 与制品都可手动跑通同步流程。
+
+### 优化
+
+#### 字段交互
+- **表情包「核心情绪 / 表情文字」**：由单行文本改为 textarea，与右侧候选 chips 等高，多行内容不再被截断。
+- **海报物料「目标人群」**：同步改为 textarea，最大长度上调到 120。
+- **自由创作「情绪氛围」**：同步改为 textarea，最大长度上调到 100。
+- 用户文档「渠道与模型」一章重写为傻瓜式：先给「OpenAI 一家全包」最简路径，再列「想省钱 / 换花样」的常见组合，三句话总结收尾。
+
+#### 首页布局
+- **预览大图与「更多候选」固定 20px 间距**：不再因左列「生成参数」高度变化或比例切换出现大段空白。
+- 预览框宽高比改为跟随真实图像或当前比例，3:4 与 16:9 切换不再被旧图卡住。
+
+### 修复
+- `release-sync` workflow 中 `gh release view` 误写、参数解析与 mac bash 3.x 关联数组兼容问题修复，现已端到端跑通同步全流程。
+- 修复创作分类 tab 在窄屏下换行错位的问题。
+- 修复 textarea 与右侧 chips 列表存在轻微高度漂移的问题。
+
+---
+
 ## [1.0.0] - 2026-06-15
 
 XImage 首个正式版本，覆盖完整 MVP 功能。
@@ -74,5 +129,7 @@ XImage 首个正式版本，覆盖完整 MVP 功能。
 
 ---
 
-[Unreleased]: https://github.com/EgoMatrix/XImage/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/EgoMatrix/XImage/compare/v0.0.8...HEAD
+[0.0.8]: https://github.com/EgoMatrix/XImage/releases/tag/v0.0.8
+[0.0.7]: https://github.com/EgoMatrix/XImage/releases/tag/v0.0.7
 [1.0.0]: https://github.com/EgoMatrix/XImage/releases/tag/v1.0.0
