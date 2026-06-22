@@ -22,6 +22,25 @@
 
 ---
 
+## [0.0.9] - 2026-06-22
+
+本版新增 XImage 官方网站与自动发布链路，同时修复图生图调用兼容性和应用内版本显示一致性问题。
+
+### 新增
+
+- 新增 XImage 官方网站，集中展示产品定位、核心功能、作品图库、应用截图和下载入口。
+- 新增官方网站发布流程，支持将网站构建并发布到 GitHub Pages。
+
+### 优化
+
+- 应用版本号改为进程内缓存，侧栏与关于页显示保持一致，避免因 git tag 变化出现版本漂移。
+
+### 修复
+
+- 修复 Agnes 图生图请求兼容性，对齐其图生图接口所需的参考图参数格式。
+
+---
+
 ## [0.0.8] - 2026-06-16
 
 围绕发布同步链路的小幅强化，让公开仓的源码层（main 分支）也能始终拿到与最新 Release 一致的 `docs/changelog.md`，便于用户在仓库主页直接查看历史变更。
@@ -129,7 +148,8 @@ XImage 首个正式版本，覆盖完整 MVP 功能。
 
 ---
 
-[Unreleased]: https://github.com/EgoMatrix/XImage/compare/v0.0.8...HEAD
+[Unreleased]: https://github.com/EgoMatrix/XImage/compare/v0.0.9...HEAD
+[0.0.9]: https://github.com/EgoMatrix/XImage/releases/tag/v0.0.9
 [0.0.8]: https://github.com/EgoMatrix/XImage/releases/tag/v0.0.8
 [0.0.7]: https://github.com/EgoMatrix/XImage/releases/tag/v0.0.7
 [1.0.0]: https://github.com/EgoMatrix/XImage/releases/tag/v1.0.0
